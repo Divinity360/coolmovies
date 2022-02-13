@@ -37,7 +37,7 @@ class BackdropAndRating extends StatelessWidget {
             right: 0,
             child: Container(
               // it will cover 90% of our total width
-              width: size.width * 0.9,
+              width: size.width * 0.7,
               height: 100,
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -59,41 +59,6 @@ class BackdropAndRating extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        SvgPicture.asset("assets/icons/star_fill.svg"),
-                        SizedBox(height: kDefaultPadding / 4),
-                        RichText(
-                          text: TextSpan(
-                            style: TextStyle(color: Colors.black),
-                            children: [
-                              TextSpan(
-                                text: "5.0",
-                                style: TextStyle(
-                                    fontSize: 16, fontWeight: FontWeight.w600),
-                              ),
-                              TextSpan(text: "10\n"),
-                              TextSpan(
-                                text: "150,212",
-                                style: TextStyle(color: kTextLightColor),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                    // Rate this
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        SvgPicture.asset("assets/icons/star.svg"),
-                        SizedBox(height: kDefaultPadding / 4),
-                        Text("Rate This",
-                            style: Theme.of(context).textTheme.bodyText2),
-                      ],
-                    ),
-                    // Metascore
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[

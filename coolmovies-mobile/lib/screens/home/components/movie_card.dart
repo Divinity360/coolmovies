@@ -30,6 +30,7 @@ class MovieCard extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(50),
               boxShadow: [kDefaultShadow],
+
               image: DecorationImage(
                 fit: BoxFit.fill,
                 image: NetworkImage(movie.imgUrl!),

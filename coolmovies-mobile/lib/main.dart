@@ -23,6 +23,14 @@ class MyApp extends StatelessWidget {
       title: 'Cool Movies',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+          appBarTheme: const AppBarTheme(
+              iconTheme: IconThemeData(
+                  color: Colors.white
+              )
+          ),
+          iconTheme: const IconThemeData(
+              color: Colors.white
+          )
       ),
       home: const HomeScreen(),
     );

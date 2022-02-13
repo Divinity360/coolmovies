@@ -9,8 +9,7 @@ class DetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-      body: DetailPageContent(movie: movie),
+    body: DetailPageContent(movie: movie),
     );
   }
 }

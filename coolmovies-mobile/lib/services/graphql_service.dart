@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:coolmovies/models/movies.dart';
+import 'package:coolmovies/models/reviews.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
@@ -28,9 +29,31 @@ class GraphQLService {
         """;
     final res = await query(context, document: data);
     if (res != null) {
-      log(AllMovies.fromJson(res['allMovies']).toJson().toString());
-      log(res['allMovies'].toString());
       return AllMovies.fromJson(res['allMovies']);
+    }
+    return null;
+  }
+
+  static Future<AllReviews?> fetchReviews(BuildContext context) async {
+    const data = r"""
+          query AllMovies {
+            allMovieReviews{
+              nodes {
+                userReviewerId
+                body
+                id
+                movieId
+                nodeId
+                rating
+                title
+              }
+            }
+          }
+        """;
+    final res = await query(context, document: data);
+    if (res != null) {
+      log(res.toString());
+      return AllReviews.fromJson(res['allMovieReviews']);
     }
     return null;
   }
