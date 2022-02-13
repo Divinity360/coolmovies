@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:coolmovies/constants.dart';
-import 'package:coolmovies/models/movie.dart';
-
+import 'package:coolmovies/models/movies.dart';
 import 'backdrop_rating.dart';
-import 'cast_and_crew.dart';
-import 'genres.dart';
 import 'title_duration_and_fav_btn.dart';
 
-class Body extends StatelessWidget {
+class DetailPageContent extends StatelessWidget {
   final Movie movie;
 
-  const Body({Key? key, required this.movie}) : super(key: key);
+  const DetailPageContent({Key? key, required this.movie}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     // it will provide us total height and width
@@ -22,7 +19,6 @@ class Body extends StatelessWidget {
           BackdropAndRating(size: size, movie: movie),
           SizedBox(height: kDefaultPadding / 2),
           TitleDurationAndFabBtn(movie: movie),
-          Genres(movie: movie),
           Padding(
             padding: EdgeInsets.symmetric(
               vertical: kDefaultPadding / 2,
@@ -36,13 +32,13 @@ class Body extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
             child: Text(
-              movie.plot,
+
+            "Lorem Ipsum",
               style: TextStyle(
                 color: Color(0xFF737599),
               ),
             ),
           ),
-          CastAndCrew(casts: movie.cast),
         ],
       ),
     );

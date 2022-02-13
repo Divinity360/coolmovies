@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:coolmovies/models/movie.dart';
+import 'package:coolmovies/models/movies.dart';
 
 import '../../../constants.dart';
 
@@ -22,14 +22,14 @@ class TitleDurationAndFabBtn extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  movie.title,
+                  movie.title!,
                   style: Theme.of(context).textTheme.headline5,
                 ),
                 SizedBox(height: kDefaultPadding / 2),
                 Row(
                   children: <Widget>[
                     Text(
-                      '${movie.year}',
+                      '${movie.releaseDate}',
                       style: TextStyle(color: kTextLightColor),
                     ),
                     SizedBox(width: kDefaultPadding),

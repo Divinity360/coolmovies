@@ -1,7 +1,8 @@
 import 'package:animations/animations.dart' show OpenContainer;
 import 'package:flutter/material.dart';
-import 'package:coolmovies/models/movie.dart';
+import 'package:coolmovies/models/movies.dart';
 import 'package:coolmovies/screens/details/details_screen.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import '../../../constants.dart';
 
 class MovieCard extends StatelessWidget {
@@ -31,7 +32,7 @@ class MovieCard extends StatelessWidget {
               boxShadow: [kDefaultShadow],
               image: DecorationImage(
                 fit: BoxFit.fill,
-                image: AssetImage(movie.poster),
+                image: NetworkImage(movie.imgUrl!),
               ),
             ),
           ),
@@ -39,27 +40,15 @@ class MovieCard extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(vertical: kDefaultPadding / 2),
           child: Text(
-            movie.title,
+            movie.title!,
             style: Theme.of(context)
                 .textTheme
                 .headline5
-                ?.copyWith(fontWeight: FontWeight.w600),
+                ?.copyWith(fontWeight: FontWeight.w800, fontSize: 21),
+            textAlign: TextAlign.center,
           ),
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Image.asset(
-              "assets/icons/star_fill.svg",
-              height: 20,
-            ),
-            SizedBox(width: kDefaultPadding / 2),
-            Text(
-              "${movie.rating}",
-              style: Theme.of(context).textTheme.bodyText2,
-            )
-          ],
-        )
+        const SizedBox(height: 20)
       ],
     );
   }

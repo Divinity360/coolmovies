@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:coolmovies/constants.dart';
 import 'package:coolmovies/screens/home/components/body.dart';
+import 'package:flutter_svg/svg.dart';
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: buildAppBar(),
-      body: Body(),
+      body: const HomePageContent(),
     );
   }
 
@@ -18,13 +21,13 @@ class HomeScreen extends StatelessWidget {
       elevation: 0,
       leading: IconButton(
         padding: EdgeInsets.only(left: kDefaultPadding),
-        icon: Image.asset("assets/icons/menu.svg"),
+        icon: SvgPicture.asset("assets/icons/menu.svg"),
         onPressed: () {},
       ),
       actions: <Widget>[
         IconButton(
           padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
-          icon: Image.asset("assets/icons/search.svg"),
+          icon: SvgPicture.asset("assets/icons/search.svg"),
           onPressed: () {},
         ),
       ],

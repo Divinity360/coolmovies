@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:coolmovies/models/movie.dart';
+import 'package:coolmovies/models/movies.dart';
 import 'package:coolmovies/screens/details/components/body.dart';
 
 class DetailsScreen extends StatelessWidget {
@@ -9,7 +9,8 @@ class DetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Body(movie: movie),
+
+      body: DetailPageContent(movie: movie),
     );
   }
 }
