@@ -44,7 +44,9 @@ class _DetailPageContentState extends State<DetailPageContent> {
               valueListenable: _reviewsData,
               builder: (BuildContext context, AllReviews? data, Widget? _) {
                 if (data == null) {
-                  return const CircularProgressIndicator();
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
                 }
                 final List<Review> reviews = data.reviews!;
                 return Container(
