@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -127,6 +128,7 @@ class _MyHomePageState extends State<MyHomePage> {
     }
 
     if(result.data != null) {
+      log(result.data.toString());
       _data.value = result.data!['allMovies'];
     }
   }
